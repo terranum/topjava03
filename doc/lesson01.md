@@ -1,12 +1,15 @@
 # Занятие 1 онлайн проекта <a href="http://javawebinar.ru/topjava/">Topjava</a>
 *Домашнее задание и оплату курса желательно прислать до вечера среды (10.06).*
+
+**Напоминаю, что каждому моему push в репозиторий соответствует патч в материалах урока, которому надо дать Apply Patch в вашем проекте.**  
+
 ## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFfm5hSHEtbmxmN2kxb0NocVRwWl9KanowWXVCVXRZTlhaM09wQUswZkRidTA&authuser=0">Материалы урока</a>
 
-## <a href="">Домашнее задание: реализация getFilteredMealsWithExceeded через Stream API</a> 
+## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFOGU0a3ZUbFo3Skk">Домашнее задание: реализация getFilteredMealsWithExceeded через Stream API</a> 
 -  <a href="http://www.youtube.com/watch?v=_PDIVhEs6TM">Доступно о Java 8 Lambda</a>
-- **<a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFNEJWRFJkVDA3TkU&authuser=0">1 Lambda samples.patch</a>**
-- **<a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFbGFYSTJZMHczUGs&authuser=0">2 HW0.patch</a>**
-- <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFfm5hSHEtbmxmN2kxb0NocVRwWl9KanowWXVCVXRZTlhaM09wQUswZkRidTA&authuser=0">Time complexity</a>
+- **<a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFQ1UwZjdMUzRrakU">1 Lambda samples.patch</a>**
+- **<a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFaE1ycEhQYUV2QjA">2 HW0.patch</a>**
+- <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFNEJWRFJkVDA3TkU">Time complexity</a>
 - <a href="http://prologistic.com.ua/polnoe-rukovodstvo-po-java-8-stream.html">Перевод Java 8 Stream Tutorial</a>
 - <a href="https://docs.google.com/presentation/d/1fR1N_UsQDhOarLKo5nrgMU1r5-M8v-IbKhpS3sQTKnY">Основное в Java 8</a>
 ## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFeG96RVhtYnE5b3M">Обзор используемых на вебинаре технологий. Интеграция ПО.</a>
