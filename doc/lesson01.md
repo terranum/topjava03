@@ -20,6 +20,7 @@
 -  Приложение <a href="https://github.com/spring-projects/spring-petclinic">Spring Pet Clinic</a>. 
 -  Demo <a href="http://demo-spring-petclinic.cfapps.io">Spring Pet Clinic</a>
 -  <a href="http://habrahabr.ru/post/232381/">По следам Spring Pet Clinic. Maven/ Spring Context/ Spring Test/ Spring ORM/ Spring Data JPAs</a>
+
 ## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFZFBuZVRKNU5Kb3c">Maven.</a>
 - <a href="http://maven.apache.org/">Home Page</a>
 - Среда сборки проектов <a href="http://www.apache-maven.ru/" target="_blank">Maven</a>.
