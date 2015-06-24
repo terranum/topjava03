@@ -21,31 +21,31 @@ public class MockUserMealRepositoryImpl implements UserMealRepository {
 
     @Override
     public UserMeal save(UserMeal userMeal) {
-        LOG.info("save " + userMeal);
+        LOG.info("save {}", userMeal);
         return userMeal;
     }
 
     @Override
     public boolean delete(int id) {
-        LOG.info("delete " + id);
+        LOG.info("delete {}", id);
         return true;
     }
 
     @Override
     public UserMeal get(int id) {
-        LOG.info("get " + id);
+        LOG.info("get {}", id);
         return null;
     }
 
     @Override
     public List<UserMeal> getAllByUserId(int userId) {
-        LOG.info("getAllByUserId " + userId);
+        LOG.info("getAllByUserId {}", userId);
         return Collections.emptyList();
     }
 
     @Override
     public List<UserMeal> getFiltredByUserId(int userId, LocalTime startTime, LocalTime endTime) {
-        LOG.info("getFiltredByUserId " + userId + " " + startTime + " " + endTime);
+        LOG.info("getFiltredByUserId {} {} {}", userId, startTime, endTime);
         return getAllByUserId(userId)
                 .stream()
                 .filter((uM) -> TimeUtil.isBetween(uM.getDateTime().toLocalTime(), startTime, endTime))
@@ -54,6 +54,6 @@ public class MockUserMealRepositoryImpl implements UserMealRepository {
 
     @Override
     public void update(UserMeal userMeal) {
-        LOG.info("update " + userMeal);
+        LOG.info("update {}", userMeal);
     }
 }

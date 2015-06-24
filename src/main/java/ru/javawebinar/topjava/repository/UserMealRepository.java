@@ -2,7 +2,6 @@ package ru.javawebinar.topjava.repository;
 
 import com.sun.istack.internal.NotNull;
 import ru.javawebinar.topjava.model.UserMeal;
-
 import java.time.LocalTime;
 import java.util.List;
 
