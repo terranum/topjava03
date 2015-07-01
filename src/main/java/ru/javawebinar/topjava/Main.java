@@ -1,5 +1,6 @@
 package ru.javawebinar.topjava;
 
+import java.time.LocalDateTime;
 import java.util.function.Consumer;
 
 /**
@@ -10,6 +11,7 @@ import java.util.function.Consumer;
  */
 public class Main {
     public static void main(String[] args) {
+        System.out.println(String.valueOf(LocalDateTime.now()));
         execute(() -> {
             System.out.println("Hello Topjava!");
         });
