@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Repository
 public class MockUserMealRepositoryImpl implements UserMealRepository {
-    private static final LoggerWrapper LOG = LoggerWrapper.get(MockUserRepositoryImpl.class);
+    private static final LoggerWrapper LOG = LoggerWrapper.get(MockUserMealRepositoryImpl.class);
     private static final List<UserMeal> mealList = Arrays.asList(
             new UserMeal(1, LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500),
             new UserMeal(2, LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Обед", 1000),
