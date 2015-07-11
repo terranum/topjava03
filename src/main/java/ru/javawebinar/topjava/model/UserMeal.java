@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
  * 11.01.2015.
  */
 public class UserMeal extends BaseEntity{
+
     protected LocalDateTime dateTime;
 
     protected String description;

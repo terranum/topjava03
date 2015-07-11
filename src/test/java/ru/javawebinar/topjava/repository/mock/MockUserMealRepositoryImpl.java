@@ -2,11 +2,12 @@ package ru.javawebinar.topjava.repository.mock;
 
 import org.springframework.stereotype.Repository;
 import ru.javawebinar.topjava.LoggerWrapper;
-import ru.javawebinar.topjava.MealTestData;
 import ru.javawebinar.topjava.model.UserMeal;
 import ru.javawebinar.topjava.repository.UserMealRepository;
 
 import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,7 +16,15 @@ import java.util.List;
  */
 @Repository
 public class MockUserMealRepositoryImpl implements UserMealRepository {
-    private static final LoggerWrapper LOG = LoggerWrapper.get(MockUserMealRepositoryImpl.class);
+    private static final LoggerWrapper LOG = LoggerWrapper.get(MockUserRepositoryImpl.class);
+    private static final List<UserMeal> mealList = Arrays.asList(
+            new UserMeal(1, LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500),
+            new UserMeal(2, LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Обед", 1000),
+            new UserMeal(3, LocalDateTime.of(2015, Month.MAY, 30, 20, 0), "Ужин", 500),
+            new UserMeal(4, LocalDateTime.of(2015, Month.MAY, 31, 10, 0), "Завтрак", 500),
+            new UserMeal(5, LocalDateTime.of(2015, Month.MAY, 31, 13, 0), "Обед", 1000),
+            new UserMeal(6, LocalDateTime.of(2015, Month.MAY, 31, 20, 0), "Ужин", 510)
+    );
 
     @Override
     public boolean delete(int id, int userId) {
@@ -38,7 +47,7 @@ public class MockUserMealRepositoryImpl implements UserMealRepository {
     @Override
     public List<UserMeal> getAll(int userId) {
         LOG.info("getAll for User {}", userId);
-        return MealTestData.USER_MEALS;
+        return mealList;
     }
 
     @Override
@@ -49,6 +58,6 @@ public class MockUserMealRepositoryImpl implements UserMealRepository {
     @Override
     public List<UserMeal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId) {
         LOG.info("getBetween {} - {} for User {}", startDate, endDate, userId);
-        return MealTestData.USER_MEALS;
+        return mealList;
     }
 }
