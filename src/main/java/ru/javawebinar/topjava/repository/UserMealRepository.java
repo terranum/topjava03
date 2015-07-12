@@ -24,6 +24,6 @@ public interface UserMealRepository {
 
     void deleteAll(int userId);
 
-    List<UserMeal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId);
+    List getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId);
 
 }

@@ -20,11 +20,3 @@ INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-31
 INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-31 13:00:00', 'Обед', 1000, 100000);
 INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-31 20:00:00', 'Ужин', 510, 100000);
 INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-06-01 14:00:00', 'Админ-Ланч', 2001, 100001);
-
-INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-30 10:00:00', 'Завтрак', 500, 100000);
-INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-30 13:00:00', 'Обед', 1000, 100000);
-INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-30 20:00:00', 'Ужин', 500, 100000);
-INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-31 10:00:00', 'Завтрак', 500, 100000);
-INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-31 13:00:00', 'Обед', 1000, 100000);
-INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-05-31 20:00:00', 'Ужин', 510, 100000);
-INSERT INTO meals (datetime, description, calories, user_id) VALUES ('2015-06-01 14:00:00', 'Админ-Ланч', 2001, 100001);

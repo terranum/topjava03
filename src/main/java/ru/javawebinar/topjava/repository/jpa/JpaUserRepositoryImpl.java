@@ -7,7 +7,7 @@ import ru.javawebinar.topjava.repository.UserRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
@@ -30,8 +30,8 @@ public class JpaUserRepositoryImpl implements UserRepository {
     @PersistenceContext
     private EntityManager em;
 
-    @Override
     @Transactional
+    @Override
     public User save(User user) {
         if (user.isNew()) {
             em.persist(user);
@@ -46,13 +46,16 @@ public class JpaUserRepositoryImpl implements UserRepository {
         return em.find(User.class, id);
     }
 
-    @Override
     @Transactional
+    @Override
     public boolean delete(int id) {
+
 //        User ref = em.getReference(User.class, id);
 //        em.remove(ref);
-//        TypedQuery<User> query = em.createQuery("DELETE FROM User u WHERE u.id=:id", User.class);
+
+//        Query query = em.createQuery("DELETE FROM User u WHERE u.id=:id");
 //        return query.setParameter("id", id).executeUpdate() != 0;
+//
         return em.createNamedQuery(User.DELETE).setParameter("id", id).executeUpdate() != 0;
     }
 
