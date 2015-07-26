@@ -12,6 +12,10 @@ function makeEditable() {
         save();
         return false;
     });
+
+    $(document).ajaxError(function (event, jqXHR, options, jsExc) {
+        failNoty(event, jqXHR, options, jsExc);
+    });
 }
 
 function deleteRow(id) {
@@ -20,6 +24,7 @@ function deleteRow(id) {
         type: 'DELETE',
         success: function () {
             updateTable();
+            successNoty('Deleted');
         }
     });
 }
@@ -44,6 +49,35 @@ function save() {
         success: function (data) {
             $('#editRow').modal('hide');
             updateTable();
+            successNoty('Saved');
         }
+    });
+}
+
+var failedNote;
+
+function closeNote() {
+    if (failedNote) {
+        failedNote.close();
+        failedNote = undefined;
+    }
+}
+
+function successNoty(text) {
+    closeNote();
+    noty({
+        text: text,
+        type: 'successNoty',
+        layout: 'bottomRight',
+        timeout: true
+    });
+}
+
+function failNoty(event, jqXHR, options, jsExc) {
+    closeNote();
+    failedNote = noty({
+        text: 'Failed: ' + jqXHR.statusText + "<br>",
+        type: 'error',
+        layout: 'bottomRight'
     });
 }
