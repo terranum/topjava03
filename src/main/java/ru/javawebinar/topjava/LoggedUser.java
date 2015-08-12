@@ -45,6 +45,10 @@ public class LoggedUser implements UserDetails, Serializable {
         return user;
     }
 
+    public UserTo getUserTo() {
+        return userTo;
+    }
+
     public static int id() {
         return get().userTo.getId();
     }
