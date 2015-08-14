@@ -61,14 +61,12 @@ function enable(id, chkbox) {
     });
 }
 
-function updateTable() {
-    $.get(ajaxUrl, function (data) {
-        oTable_datatable.fnClearTable();
-        $.each(data, function (key, item) {
-            oTable_datatable.fnAddData(item);
-        });
-        oTable_datatable.fnDraw();
+function updateTableWithData(data) {
+    oTable_datatable.fnClearTable();
+    $.each(data, function (key, item) {
+        oTable_datatable.fnAddData(item);
     });
+    oTable_datatable.fnDraw();
 }
 
 function save() {

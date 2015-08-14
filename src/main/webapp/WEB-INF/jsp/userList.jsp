@@ -90,6 +90,12 @@
     function init(){
     }
 
+    function updateTable() {
+        $.get(ajaxUrl, function (data) {
+            updateTableWithData(data);
+        });
+    }
+
     function updateCreatedRow(row, data, dataIndex) {
         if (!data.enabled) {
             $(row).css("text-decoration", "line-through");

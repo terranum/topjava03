@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="datatables" uri="http://github.com/dandelion/datatables" %>
 <%@ taglib prefix="dandelion" uri="http://github.com/dandelion" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
@@ -17,6 +19,35 @@
 
             <c:set var="ajaxUrl" value="ajax/profile/meals/"/>
             <div class="view-box">
+                <form:form modelAttribute="filter" class="form-horizontal" action="ajax/profile/meals/filter" charset="utf-8"
+                           accept-charset="UTF-8" id="filter">
+                    <div class="form-group">
+                        <spring:bind path="startDate">
+                            <label class="col-sm-2">From Date</label>
+                            <div class="col-sm-2"><form:input path="startDate" class="form-control date-picker" placeholder="Start Date"/></div>
+                        </spring:bind>
+                        <spring:bind path="endDate">
+                            <label class="col-sm-2">To Date</label>
+                            <div class="col-sm-2"><form:input path="endDate" class="form-control date-picker" placeholder="End Date"/></div>
+                        </spring:bind>
+                    </div>
+                    <div class="form-group">
+                        <spring:bind path="startTime">
+                            <label class="col-sm-2">From Time</label>
+                            <div class="col-sm-2"><form:input path="startTime" class="form-control time-picker" placeholder="Start Time"/></div>
+                        </spring:bind>
+                        <spring:bind path="endTime">
+                            <label class="col-sm-2">To Time</label>
+                            <div class="col-sm-2"><form:input path="endTime" class="form-control time-picker" placeholder="End Time"/></div>
+                        </spring:bind>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-8">
+                            <button type="submit" class="btn btn-primary pull-right">Filter</button>
+                        </div>
+                    </div>
+                </form:form>
+
                 <a class="btn btn-sm btn-info" id="add">Add Meal</a>
                 <datatables:table id="datatable" url="${ajaxUrl}" row="user" theme="bootstrap3"
                                   cssClass="table table-striped" pageable="false" info="false">
@@ -84,9 +115,37 @@
     var ajaxUrl = '${ajaxUrl}';
 
     function init() {
+        $('#filter').submit(function () {
+            updateTable();
+            return false;
+        });
+
+        $('.date-picker').datetimepicker({
+            timepicker: false,
+            format: 'Y-m-d',
+            lang:'ru'
+        });
+        $('.time-picker').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            lang:'ru'
+        });
+
         $('#dateTime').datetimepicker({
             format: 'Y-m-d H:i',
             lang:'ru'
+        });
+    }
+
+    function updateTable() {
+        var frm = $('#filter');
+        $.ajax({
+            type: "POST",
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function(data){
+                updateTableWithData(data);
+            }
         });
     }
 
