@@ -46,7 +46,8 @@ public class JdbcUserRepositoryImpl implements UserRepository {
                 .addValue("email", user.getEmail())
                 .addValue("password", user.getPassword())
                 .addValue("registered", user.getRegistered())
-                .addValue("enabled", user.isEnabled());
+                .addValue("enabled", user.isEnabled())
+                .addValue("caloriesPerDay", user.getCaloriesPerDay());
 
         if (user.isNew()) {
             Number newKey = insertUser.executeAndReturnKey(map);
@@ -54,7 +55,7 @@ public class JdbcUserRepositoryImpl implements UserRepository {
         } else {
             namedParameterJdbcTemplate.update(
                     "UPDATE users SET name=:name, email=:email, password=:password, " +
-                            "registered=:registered, enabled=:enabled WHERE id=:id", map);
+                            "registered=:registered, enabled=:enabled, calories_per_day=:caloriesPerDay WHERE id=:id", map);
         }
         return user;
     }
@@ -67,21 +68,21 @@ public class JdbcUserRepositoryImpl implements UserRepository {
     @Override
     public User get(int id) {
         return jdbcTemplate.queryForObject(
-                "SELECT id, name, email, password, registered, enabled FROM users WHERE id=?",
+                "SELECT * FROM users WHERE id=?",
                 ROW_MAPPER, id);
     }
 
     @Override
     public User getByEmail(String email) {
         return jdbcTemplate.queryForObject(
-                "SELECT id, name, email, password, registered, enabled FROM users WHERE email=?",
+                "SELECT * FROM users WHERE email=?",
                 ROW_MAPPER, email);
     }
 
     @Override
     public List<User> getAll() {
         return jdbcTemplate.query(
-                "SELECT id, name, email, password, registered, enabled FROM users ORDER BY name, email",
+                "SELECT * FROM users ORDER BY name, email",
                 ROW_MAPPER);
     }
 }

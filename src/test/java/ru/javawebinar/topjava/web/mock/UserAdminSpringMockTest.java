@@ -23,7 +23,7 @@ public class UserAdminSpringMockTest {
 
     @Test
     public void testCreate() throws Exception {
-        controller.create(new User(null, "Name", "email@ya.ru", "password", Role.ROLE_USER));
+        controller.create(new User(null, "Name", "email@ya.ru", "password", 2000, Role.ROLE_USER));
     }
 
     @Test

@@ -39,7 +39,7 @@ public class AbstractUserMealController extends ExceptionInfoHandler {
     public List<UserMealWithExceed> getAll() {
         int userId = LoggedUser.id();
         LOG.info("getAll for User {}", userId);
-        return UserMealsUtil.getWithExceeded(service.getAll(userId), LoggedUser.getCaloriesPerDay());
+        return UserMealsUtil.getWithExceeded(service.getAll(userId), LoggedUser.get().getCaloriesPerDay());
     }
 
     public void deleteAll() {
@@ -66,7 +66,7 @@ public class AbstractUserMealController extends ExceptionInfoHandler {
         int userId = LoggedUser.id();
         LOG.info("getBetween dates {} - {} for time {} - {} for User {}", startDate, endDate, startTime, endTime, userId);
         return UserMealsUtil.getFilteredWithExceeded(
-                service.getBetweenDates(startDate, endDate, userId), startTime, endTime, LoggedUser.getCaloriesPerDay()
+                service.getBetweenDates(startDate, endDate, userId), startTime, endTime, LoggedUser.get().getCaloriesPerDay()
         );
     }
 }

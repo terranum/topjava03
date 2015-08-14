@@ -10,11 +10,11 @@ import ru.javawebinar.topjava.to.UserTo;
  */
 public class UserUtil {
     public static User createFromTo(UserTo newUser) {
-        return new User(null, newUser.getName(), newUser.getEmail(), newUser.getPassword(), Role.ROLE_USER);
+        return new User(null, newUser.getName(), newUser.getEmail(), newUser.getPassword(), newUser.getCaloriesPerDay(), Role.ROLE_USER);
     }
 
     public static UserTo asTo(User user) {
-        return new UserTo(user.getId(), user.getName(), user.getEmail(), null);
+        return new UserTo(user.getId(), user.getName(), user.getEmail(), null, user.getCaloriesPerDay());
     }
 
     public static User updateFromTo(User user, UserTo userTo) {

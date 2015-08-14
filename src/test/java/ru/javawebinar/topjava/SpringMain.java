@@ -29,7 +29,7 @@ public class SpringMain {
 
             System.out.println(Arrays.toString(appCtx.getBeanDefinitionNames()));
             AdminRestController adminUserController = appCtx.getBean(AdminRestController.class);
-            System.out.println(adminUserController.create(new User(1, "userName", "email", "password", Role.ROLE_ADMIN)));
+            System.out.println(adminUserController.create(new User(1, "userName", "email", "password", 2000, Role.ROLE_ADMIN)));
             System.out.println();
             UserMealRestController mealController = appCtx.getBean(UserMealRestController.class);
             List<UserMealWithExceed> filteredMealsWithExceeded =
