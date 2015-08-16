@@ -4,8 +4,9 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
-public class UserTo {
+public class UserTo implements Serializable {
     protected int id;
 
     public UserTo() {

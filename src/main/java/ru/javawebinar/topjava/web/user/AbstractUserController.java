@@ -6,14 +6,13 @@ import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.service.UserService;
 import ru.javawebinar.topjava.to.UserTo;
 import ru.javawebinar.topjava.util.UserUtil;
-import ru.javawebinar.topjava.web.ExceptionInfoHandler;
 
 import java.util.List;
 
 /**
  * User: gkislin
  */
-public abstract class AbstractUserController extends ExceptionInfoHandler {
+public abstract class AbstractUserController {
     private static final LoggerWrapper LOG = LoggerWrapper.get(AbstractUserController.class);
 
     @Autowired

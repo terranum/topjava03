@@ -5,6 +5,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
+import ru.javawebinar.topjava.LoggedUser;
 import ru.javawebinar.topjava.LoggerWrapper;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +25,10 @@ public class GlobalControllerExceptionHandler {
         LOG.error("Exception at request " + req.getRequestURL());
         ModelAndView mav = new ModelAndView("exception/exception");
         mav.addObject("exception", e);
+        LoggedUser loggedUser = LoggedUser.safeGet();
+        if (loggedUser != null) {
+            mav.addObject("userTo", loggedUser.getUserTo());
+        }
         return mav;
     }
 }
