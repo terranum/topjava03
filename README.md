@@ -1,5 +1,5 @@
-Maven/ Spring/ Security/ JPA(Hibernate)/ Rest(Jackson)/ Bootstrap(CSS)/ jQuery + plugins
-===============================
+Прект Maven/ Spring/ Security/ JPA(Hibernate)/ Rest(Jackson)/ Bootstrap(CSS)/ jQuery + plugins
+-----------------------------
 
 Программа проекта: http://javawebinar.ru/topjava/
 ----------------------------------
