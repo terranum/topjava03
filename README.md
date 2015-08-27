@@ -1,5 +1,3 @@
-# topjava03
-
 Maven/ Spring/ Security/ JPA(Hibernate)/ Rest(Jackson)/ Bootstrap(CSS)/ jQuery + plugins
 ===============================
 
