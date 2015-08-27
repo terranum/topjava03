@@ -1,9 +1,9 @@
 # topjava03
 
-Старт 3-го курса вебинара: 01.06.
+Maven/ Spring/ Security/ JPA(Hibernate)/ Rest(Jackson)/ Bootstrap(CSS)/ jQuery + plugins
 ===============================
 
-Программа курса: http://javawebinar.ru/topjava/
+Программа проекта: http://javawebinar.ru/topjava/
 ----------------------------------
 Демо разрабатываемого приложения: http://topjava.herokuapp.com/
 -------------------------------
